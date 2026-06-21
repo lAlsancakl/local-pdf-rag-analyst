@@ -1,0 +1,21 @@
+# Virtual Environment
+venv/
+.venv/
+ENV/
+
+# Local Database & Data
+chroma_db/
+test.pdf
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Streamlit local configs
+.streamlit/
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -33,6 +33,6 @@ Ensure you have Ollama installed and running with Llama 3 model:
 ```bash
 ollama run llama3
 ```
-##Start
+## Start
 ```bash
 streamlit run app.py

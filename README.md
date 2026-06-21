@@ -32,3 +32,7 @@ A fully local Retrieval-Augmented Generation (RAG) pipeline designed for secure 
 Ensure you have Ollama installed and running with Llama 3 model:
 ```bash
 ollama run llama3
+
+Start
+```bash
+streamlit run app.py

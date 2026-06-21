@@ -1,39 +1,109 @@
-# local-pdf-rag-analyst
+# 📄 Local PDF RAG Analyst
 
-A fully local Retrieval-Augmented Generation (RAG) pipeline designed for secure PDF document analysis. This system enables natural language interactions with sensitive documents while ensuring 100% data privacy by executing entirely on local infrastructure.
+AI-powered PDF chatbot that enables users to interact with documents using natural language. Built with LangChain, ChromaDB, Ollama, and Streamlit, the system retrieves relevant context from PDF files and generates accurate, context-aware responses using a local LLM.
 
-## Application Preview
-![Application Interface](image.png)
+---
 
-## Key Features
-* **100% Local Execution:** Powered by Ollama (Llama 3) and HuggingFace BGE Embeddings for complete data privacy.
-* **Token Streaming:** Implements a word-by-word streaming interface built over Streamlit for premium responsiveness.
-* **Context Tracing:** Shows exactly which text segments and page numbers from the source PDF were retrieved to construct the response.
-* **Performance Telemetry:** Monitors and exposes precise end-to-end processing latency metrics in milliseconds (ms).
-* **Conversational Memory:** Features message preservation to handle follow-up questions seamlessly.
+## ✨ Features
 
-## Tech Stack
-* **Language:** Python
-* **Orchestration:** LangChain / LCEL
-* **LLM:** Ollama (Llama 3)
-* **Embedding Model:** BAAI / bge-small-en-v1.5
-* **Vector Store:** ChromaDB
-* **Frontend UI:** Streamlit
+- 📑 PDF document ingestion and text chunking
+- 🧠 Semantic embeddings using BAAI/bge-small-en-v1.5
+- 🔎 Vector similarity search with ChromaDB
+- 🤖 Local Llama 3 inference via Ollama
+- 💬 Conversation memory (short and long-term context)
+- 📚 Source chunk and page tracking
+- ⚡ Response latency metrics
+- 🖥️ Interactive Streamlit interface
+- 🔒 Fully local execution
 
-## Architecture Details
-* **Ingestion Layer:** `PyPDFLoader` extracts text from local `test.pdf`.
-* **Chunking Engine:** `RecursiveCharacterTextSplitter` splits document (`chunk_size=600`, `overlap=60`).
-* **Embedding & DB:** `BAAI/bge-small-en-v1.5` converts chunks to vectors and stores them in local `ChromaDB`.
-* **Inference:** LangChain pipeline formats prompt with history and context, then passes it to local `Ollama` server.
+---
 
-## Installation & Quick Start
+## 🛠 Tech Stack
 
-### 1. Prerequisites
-Ensure you have Ollama installed and running with Llama 3 model:
+- Python
+- LangChain
+- Streamlit
+- Ollama
+- Llama 3
+- ChromaDB
+- HuggingFace Embeddings
+- PyPDFLoader
+
+---
+
+## ⚙️ Architecture
+
+```text
+PDF Document
+     ↓
+Text Chunking
+     ↓
+Embeddings
+     ↓
+ChromaDB Vector Store
+     ↓
+Retriever
+     ↓
+Llama 3 (Ollama)
+     ↓
+Context-Aware Response
+     ↓
+Source Chunks + Metrics
+```
+
+---
+
+## 🚀 Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/lAlsancakl/local-pdf-rag-analyst.git
+cd local-pdf-rag-analyst
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Start Ollama
+
 ```bash
 ollama run llama3
 ```
 
-## Start
+### Run the application
+
 ```bash
 streamlit run app.py
+```
+
+---
+
+## 📷 Demo
+
+<img width="1000" alt="demo" src="YOUR_SCREENSHOT_HERE">
+
+---
+
+## 🎯 Key Concepts
+
+- Retrieval-Augmented Generation (RAG)
+- Semantic Search
+- Vector Databases
+- Embeddings
+- Prompt Engineering
+- Local LLM Inference
+- Context-Aware Response Generation
+
+---
+
+## 📌 Project Highlights
+
+- Built an end-to-end RAG pipeline for PDF documents.
+- Implemented semantic retrieval using embeddings and vector search.
+- Integrated a local LLM (Llama 3) for context-grounded responses.
+- Added conversation memory, source tracking, and response metrics.
+- Designed an interactive Streamlit interface for natural language document interaction.

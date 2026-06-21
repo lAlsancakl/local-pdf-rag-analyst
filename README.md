@@ -82,9 +82,9 @@ streamlit run app.py
 
 ---
 
-## 📷 Demo
+## 📷 Image
 
-<img width="1000" alt="demo" src="YOUR_SCREENSHOT_HERE">
+<img width="1000" alt="demo" src="image.png">
 
 ---
 
